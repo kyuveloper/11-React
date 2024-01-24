@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <!-- 
+        함수형 컴포넌트에서 하나의 이벤트 핸들러와 하나의 객체로 state를 useState hooks를 써서 관리한다
+
+        함수형 컴포넌트는 state로 관리되는 객체의 부분적인 변수 값을 수정할 때 나머지 부분을 스프레드 연산자를
+        이용해서 객체 복사하는 개념을 사용해야 한다
+    -->
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const {useState} = React;
+
+        function LoginComponent() {
+            const [form, setForm] = useState({
+                username: '',
+                password: ''
+            })
+            // console.log(form)
+
+            const {username, password} = form; // 구조분해
+            // state가 변경될 때 마다 화면이 리렌더링된다 // 사용자가 임의로 렌더링을 막을 수 있다 (hooks - useEffect?)
+            console.log(username)
+            console.log(password)
+
+            const onChangeHandler = (e) => {
+                const changeForm = {
+                    ...form,
+                    [e.target.name]: e.target.value
+                }
+                setForm(changeForm);
+                console.log(form)
+            }
+
+            const onClickHandler = () => {
+                alert(`${form.username} \n ${form.password}`)
+                setForm({
+                    username: '',
+                    password: ''
+                })
+            }
+            
+            return (
+                <>
+                    <h1>로그인</h1>
+                    {/* react에서 렌더링이 되지 않으면 아래와 같이 사용자 입력을 실시간으로 받을 수 없다 */}
+                    <label>ID : </label>
+                    <input type="text" name="username" placeholder="아이디 입력" value={form.username} onChange={onChangeHandler}/>
+                    <br/>
+                    <label>PW : </label>
+                    <input type="password" name="password" placeholder="비밀번호 입력" value={form.password} onChange={onChangeHandler}/>
+                    <br/>
+                    <button onClick={onClickHandler}>확인</button>
+                </>
+            )
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<LoginComponent/>)
+    </script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        html, body, ul, ol {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        /* Header div style */
+        const headerStyle = {
+            backgroundColor: '#2e344e',
+            height: '100vh',
+            width: '18rem',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between'
+        }
+        /* My Image style */
+        const myImgStyle = {
+            width: '60%',
+            height: '100%',
+            borderRadius: 1000
+        }
+        /* My Image Box Style */
+        const myImgBoxStyle = {
+            textAlign: 'center',
+            width: '100%',
+            padding: '3rem 0',
+            borderBottom: '1px solid black'
+        }
+        /* header text font style */
+        const headerFont = {
+            color: 'whitesmoke',
+            fontSize: '2rem',
+            textAlign: 'center'
+        }
+        /* footer text font style */
+        const footerFont = {
+            color: 'whitesmoke',
+            fontSize: '1.2rem',
+            textAlign: 'center',
+            padding: '1rem 0',
+            borderTop: '1px solid black'
+        }
+
+        /* Text input */
+        function Text({text, style}) {
+            return (
+                <span style={style}>{text}</span>
+            )
+        }
+        /* Footer Text */
+        function FooterText() {
+            return (
+                <>
+                    <Text text="© 2024 Jinkyu Kim" style={footerFont}/>
+                </>
+            )
+        }
+        /* Hedaer Menu section */
+        function HeaderMenu() {
+            return (
+                <>
+                    <div className="headerMenu" style={headerFont}>
+                        <ul>
+                            <li>Home</li>
+                            <li>About</li>
+                            <li>Contact</li>
+                        </ul>
+                    </div>
+                </>
+            )
+        }
+        /* My Image */
+        function MyImage() {
+            return (
+                <>
+                    <div className="myImg" style={myImgBoxStyle}>
+                        <img src="./java.png" style={myImgStyle} alt=""/>
+                    </div>
+                </>
+            )
+        }
+
+        function Header() {
+            return (
+                <>
+                    <div style={headerStyle}>
+                        <MyImage/>
+                        <HeaderMenu/>
+                        <FooterText/>
+                    </div>
+                </>
+            )
+        }
+        
+        ReactDOM.createRoot(document.getElementById('root')).render(<Header/>)
+
+        // const header = (
+        //     <div style={headerStyle}>
+        //         <ul style={headerFont}>
+        //             <li>Home</li>
+        //             <li>About</li>
+        //             <li>Contact</li>
+        //         </ul>
+        //     </div>
+        // )
+
+        // function Text({text, styles}) {
+        //     return (
+        //         <span style={styles}>{text}</span>
+        //     )
+        // }
+        // function MyInfo() {
+        //     const name = '김진규'
+        //     const style = {
+        //         color: 'black',
+        //         fontSize: 40
+        //     }
+
+        //     const content = '저는 열정적인 사람입니다.'
+        //     const contentStyle = {
+        //         color:'red'
+        //     }
+
+        //     return (
+        //         <>
+        //             <Text text={name} styles={style}/> 
+        //             <Text text={content} styles={contentStyle}/>
+
+        //         </>
+        //     )
+        // }
+
+        // ReactDOM.createRoot(document.getElementById('root')).render(<MyInfo/>)
+        // ReactDOM.createRoot(document.getElementById('root')).render(header)
+    </script>
+</body>
+</html>

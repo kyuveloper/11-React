@@ -1,0 +1,45 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: normal;
+    position: relative;
+    height: 100vh;
+}
+div {
+    display: block;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.listContainer {
+    width: 50rem;
+    height: 40rem;
+    background-color: darkgreen;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 1px 1px 10rem 0.5rem;
+    border-radius: 2rem;
+    text-align: center;
+}
+
+.listContainer h1 {
+    margin: 2rem 0;
+}
+
+.inputContainer {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

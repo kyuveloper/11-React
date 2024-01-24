@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function Text({text, styles}) {
+            return (
+                <span style={styles}>{text}</span>
+            )
+        }
+
+        function MyInfo() {
+            const name = '김진규'
+            const style = {
+                color: 'black',
+                fontSize: 40
+            }
+
+            const content = '저는 열정적인 사람입니다.'
+            const contentStyle = {
+                color:'red'
+            }
+
+            return (
+                <>
+                    <Text text={name} styles={style}/> 
+                    <Text text={content} styles={contentStyle}/>
+                </>
+            )
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<MyInfo />)
+    </script>
+</body>
+</html>
