@@ -1,0 +1,9 @@
+.BlogBox div {
+    display: inline-block;
+    margin: 5px;
+    display: flex;
+}
+
+.BlogBox h3 {
+    margin-right: 3rem;
+}

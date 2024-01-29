@@ -9,5 +9,8 @@ const getBlogDetail = (blogCode) => {
 }
 
 const searchBlog = (blogCode) => {
-    
+    return blogs.filter(blog => blog.blogName.match(blogCode));
 }
+
+
+export {getBlogList, getBlogDetail, searchBlog}

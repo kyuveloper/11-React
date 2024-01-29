@@ -1,8 +1,8 @@
 [
     {
-       "menuCode":1,
+       "menuCode":1,"menuPrice":4500,
        "menuName":"열무김치라떼",
-       "menuPrice":4500,
+       
        "categoryName":"쥬스",
        "isOrderable":true,
        "detail": {

@@ -1,0 +1,11 @@
+.BlogItem {
+    width: 300px;
+    background-color: aqua;
+    cursor: pointer;
+    color: black;
+}
+
+.BlogItem:hover {
+    background-color: purple;
+    color: white;
+}
