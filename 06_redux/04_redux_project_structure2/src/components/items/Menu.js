@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
+import { callGetMenuAPI } from "../../api/MenuAPICalls";
 
 const Menu = ({id}) => {
     const result = useSelector(state => state.menuReducer);

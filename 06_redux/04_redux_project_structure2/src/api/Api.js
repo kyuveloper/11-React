@@ -1,5 +1,6 @@
+import axios from "axios";
 
-const DOMAIN = 'http://localhost:4000';
+const DOMAIN = "http://localhost:4000";
 
 export const request = async (method, url, data) => {
     return await axios ({
@@ -7,5 +8,5 @@ export const request = async (method, url, data) => {
         url: `${DOMAIN}${url}`,
         data
     }).then(res => res.data)
-    .catch(error => console.log(error));
+    .catch(error => console.log('404040404040error'));
 }
